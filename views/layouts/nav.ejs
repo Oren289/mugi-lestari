@@ -1,13 +1,11 @@
 <nav class="navbar navbar-expand-lg bg-light shadow">
   <div class="container">
-    <a class="navbar-brand" href="/home"><span style="color: #ff8fb1">MI</span><span style="color: #432c7a">M</span><span style="color: #80489c">I</span></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <a class="navbar-brand" href="/"><span style="color: #ff8fb1">MI</span><span style="color: #432c7a">M</span><span style="color: #80489c">I</span></a>
+
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link fw-bold <%= locals.activeHome?activeHome:null %>" aria-current="page" href="/home">Home</a>
+          <a class="nav-link fw-bold <%= locals.activeHome?activeHome:null %>" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link fw-bold <%= locals.activeProduct?activeProduct:null %>" href="/products">Products</a>
@@ -17,14 +15,51 @@
         </li>
       </ul>
     </div>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarNavOffcanvas">
+      <div class="offcanvas-header">
+        <div class="d-flex align-items-center">
+          <img class="user-picture" src="/img/blank-pp.png" alt="profilepic" />
+          <h5 class="offcanvas-title ms-2" id="offcanvasNavbarLabel">Hello, <strong><%= locals.sessionUser?sessionUser.split(' ')[0]:"Guest"%></strong> &#128075;</h5>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link fw-bold <%= locals.activeHome?activeHome:null %>" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold <%= locals.activeProduct?activeProduct:null %>" href="/products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold <%= locals.activeAbout?activeAbout:null %>" href="/about">About</a>
+          </li>
+          <hr />
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="/myaccount">My Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="/orders">My Orders</a>
+          </li>
+          <hr />
+          <% if(sessionUser){ %>
+          <li><a class="btn btn-danger d-grid mt-2" href="/logout">Log out</a></li>
+          <% } else { %>
+          <li><a class="btn btn-success d-grid mt-2" href="/login">Log in</a></li>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+
     <form class="d-flex search-bar" role="search">
-      <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
-      <button class="btn" type="submit">
+      <input class="form-control" id="searchBar" type="search" placeholder="Search" aria-label="Search" />
+      <button class="btn" type="submit" id="searchBarBtn">
         <i class="bi bi-search-heart"></i>
       </button>
     </form>
     <a href="/cart" class="cart-button me-3"><i class="bi bi-cart4"></i></a>
-    <div class="dropdown">
+    <div class="dropdown" id="profileDropdown">
       <button class="btn dropdown-toggle" type="button" id="dropdown-button" data-bs-toggle="dropdown" aria-expanded="false"><img class="user-picture" src="/img/blank-pp.png" alt="profilepic" /></button>
       <ul class="dropdown-menu">
         <li>
@@ -41,5 +76,8 @@
         <% } %>
       </ul>
     </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNavOffcanvas" aria-controls="navbarNavOffcanvas" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list fs-1"></i>
+    </button>
   </div>
 </nav>

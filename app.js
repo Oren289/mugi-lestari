@@ -41,7 +41,7 @@ app.use(flash());
 app.use("/login", loginRoute);
 app.use("/logout", logoutRoute);
 app.use("/register", registerRoute);
-app.use("/home", homeRoute);
+app.use("/", homeRoute);
 app.use("/myaccount", accountRoute);
 app.use("/products", productListRoute);
 app.use("/cart", cartRoute);

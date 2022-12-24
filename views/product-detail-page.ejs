@@ -10,11 +10,11 @@
       <img src="/img/products-img/<%= product.image %>" alt="" class="detail-img" />
     </div>
     <div class="col">
-      <h2 class="fw-bold"><%= product.product_name %></h2>
+      <h2 class="fw-bold mt-4 mt-sm-0"><%= product.product_name %></h2>
       <h1 class="fw-bold" id="price">Rp <%= product.price.toLocaleString() %></h1>
       <h4 class="mt-5">Description</h4>
       <p><%= product.description %></p>
-      <div class="card">
+      <div class="card mb-3 mb-sm-0">
         <div class="card-body">
           <div class="row">
             <div class="col text-center">
@@ -67,11 +67,11 @@
     </div>
   </div>
   <hr class="mt-5" />
-  <div class="row mt-4">
-    <h4 class="mb-4">Other Products</h4>
-    <div class="col d-flex flex-wrap">
+  <div class="row mt-4 d-flex">
+    <h4 class="mb-4 text-center text-lg-start">Other Products</h4>
+    <div class="container-fluid col d-flex flex-wrap justify-content-center">
       <% recommendation.slice(0, 5).forEach(product => { %>
-      <a href="/products/<%= product._id %>" class="card product-card me-3" style="text-decoration: none; color: rgb(81, 81, 81)">
+      <a href="/products/<%= product._id %>" class="card product-card m-1 me-sm-3 mb-sm-3" style="text-decoration: none; color: rgb(81, 81, 81)">
         <img src="/img/products-img/<%= product.image %>" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title fw-bold" style="color: #80489c"><%= product.product_name %></h5>

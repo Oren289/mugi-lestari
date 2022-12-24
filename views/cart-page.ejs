@@ -45,7 +45,7 @@
               <h5>Grand Total:</h5>
             </div>
             <div class="col">
-              <h5 class="text-end fw-bold">Rp <%= carts.grandTotal.toLocaleString() %></h5>
+              <h5 class="text-end fw-bold">Rp <%= carts.grandTotal?carts.grandTotal.toLocaleString(): 0 %></h5>
             </div>
           </div>
           <div class="d-grid mt-2">

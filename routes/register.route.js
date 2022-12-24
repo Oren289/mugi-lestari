@@ -10,7 +10,7 @@ const Cart = require("../model/cart");
 
 router.get("/", (req, res) => {
   if (req.session.user) {
-    res.redirect("/home");
+    res.redirect("/");
   } else {
     res.render("register-page", {
       title: "Login",
