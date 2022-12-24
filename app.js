@@ -36,7 +36,7 @@ app.use(cookieParser("secret"));
 app.use(
   session({
     cookie: { secure: true, httpOnly: false, maxAge: 60000 * 10, sameSite: "none" },
-    secret: "secret",
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
   })
