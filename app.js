@@ -6,11 +6,16 @@ const cookieParser = require("cookie-parser");
 const flash = require("connect-flash");
 const dotenv = require("dotenv").config();
 const connectDB = require("./utils/db");
+const MongoDBStore = require("connect-mongodb-session")(session);
 
 const http = require("http");
 
 const app = express();
 const port = process.env.PORT || 3001;
+const store = new MongoDBStore({
+  uri: DB_URI,
+  collection: "sessions",
+});
 connectDB();
 
 // Routers
@@ -38,7 +43,8 @@ app.use(
     cookie: { secure: true, httpOnly: false, maxAge: 60000 * 10, sameSite: "none" },
     secret: process.env.SECRET,
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
+    store,
   })
 );
 app.use(flash());
