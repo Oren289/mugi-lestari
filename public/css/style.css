@@ -99,6 +99,10 @@ footer {
   font-size: 1.5em;
 }
 
+#jumbotronContainer {
+  margin-top: 13rem;
+}
+
 .btn-primary {
   background-color: #ff8fb1;
   border-color: #ff8fb1;
@@ -331,4 +335,126 @@ footer {
 .recommended-card:hover {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   transform: scale(1.03);
+}
+
+@media screen and (max-width: 500px) {
+  #searchBar,
+  #searchBarBtn {
+    display: none;
+  }
+
+  .navbar-nav:first-child {
+    margin-left: 0;
+  }
+
+  .navbar-nav {
+    font-size: 1.2em;
+  }
+
+  .navbar-collapse {
+    display: none;
+  }
+
+  #profileDropdown {
+    display: none;
+  }
+
+  .recommended-card h2 {
+    font-size: 2.5em;
+  }
+
+  #homeRecommendedProducts:last-child {
+    margin-top: 2rem;
+  }
+
+  #jumbotronContainer {
+    margin-top: 10rem;
+  }
+
+  #productJumbotron h2 {
+    font-size: 3em;
+  }
+
+  #categoryCard {
+    margin-bottom: 2rem;
+  }
+
+  #copyright {
+    flex-direction: column;
+  }
+
+  .product-card img {
+    height: 35%;
+  }
+
+  #productListContainer {
+    justify-content: center;
+  }
+
+  #myaccountTitle {
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 500px) {
+  .product-card {
+    width: 10.5rem;
+    height: 18rem;
+    margin: 0.4rem;
+  }
+
+  .cart-button {
+    margin-left: 5rem;
+  }
+
+  #navigationPills a {
+    font-size: 0.85em;
+    font-weight: bold;
+  }
+}
+
+@media screen and (min-width: 370px) and (max-width: 399px) {
+  .product-card {
+    width: 9.5rem;
+    height: 18rem;
+    margin: 0.3rem;
+  }
+
+  .cart-button {
+    margin-left: 2rem;
+  }
+
+  #jumbotronContainer h2 {
+    font-size: 3.5em;
+  }
+
+  #navigationPills a {
+    font-size: 0.72em;
+    font-weight: bold;
+  }
+}
+
+@media screen and (min-width: 350px) and (max-width: 369px) {
+  .product-card {
+    width: 9rem;
+    height: 18rem;
+    margin: 0.2rem;
+  }
+
+  .cart-button {
+    margin-left: 1rem;
+  }
+
+  #productJumbotron h2 {
+    font-size: 2.5em;
+  }
+
+  #jumbotronContainer h2 {
+    font-size: 3em;
+  }
+
+  #navigationPills a {
+    font-size: 0.6em;
+    font-weight: bold;
+  }
 }
