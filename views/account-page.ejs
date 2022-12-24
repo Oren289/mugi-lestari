@@ -6,7 +6,7 @@
       <% } %>
       <div class="card text-center">
         <div class="card-header">
-          <ul class="nav nav-pills card-header-pills">
+          <ul class="nav nav-pills card-header-pills" id="navigationPills">
             <li class="nav-item active-pill" id="my-account-pill">
               <a class="btn nav-link no-margin" href="#">My Account</a>
             </li>
@@ -27,7 +27,7 @@
               </div>
             </div>
             <div class="col text-start">
-              <h3 class="fw-bold">My Account</h3>
+              <h3 class="fw-bold" id="myaccountTitle">My Account</h3>
               <form action="/myaccount?_method=PUT" method="POST">
                 <div class="row mt-4">
                   <div class="col-md-3">

@@ -386,16 +386,30 @@ footer {
   .product-card img {
     height: 35%;
   }
+
+  #productListContainer {
+    justify-content: center;
+  }
+
+  #myaccountTitle {
+    margin-top: 2rem;
+  }
 }
 
 @media screen and (min-width: 400px) and (max-width: 500px) {
   .product-card {
     width: 10.5rem;
     height: 18rem;
+    margin: 0.4rem;
   }
 
   .cart-button {
     margin-left: 5rem;
+  }
+
+  #navigationPills a {
+    font-size: 0.85em;
+    font-weight: bold;
   }
 }
 
@@ -403,10 +417,20 @@ footer {
   .product-card {
     width: 9.5rem;
     height: 18rem;
+    margin: 0.3rem;
   }
 
   .cart-button {
     margin-left: 2rem;
+  }
+
+  #jumbotronContainer h2 {
+    font-size: 3.5em;
+  }
+
+  #navigationPills a {
+    font-size: 0.72em;
+    font-weight: bold;
   }
 }
 
@@ -414,6 +438,7 @@ footer {
   .product-card {
     width: 9rem;
     height: 18rem;
+    margin: 0.2rem;
   }
 
   .cart-button {
@@ -422,5 +447,14 @@ footer {
 
   #productJumbotron h2 {
     font-size: 2.5em;
+  }
+
+  #jumbotronContainer h2 {
+    font-size: 3em;
+  }
+
+  #navigationPills a {
+    font-size: 0.6em;
+    font-weight: bold;
   }
 }

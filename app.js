@@ -4,9 +4,14 @@ const { body, validationResult, check } = require("express-validator");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const flash = require("connect-flash");
+const dotenv = require("dotenv").config();
+const connectDB = require("./utils/db");
+
+const http = require("http");
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
+connectDB();
 
 // Routers
 const loginRoute = require("./routes/login.route");

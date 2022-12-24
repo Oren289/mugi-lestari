@@ -23,9 +23,9 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid col d-flex justify-content-center flex-wrap">
+    <div class="col d-flex flex-wrap" id="productListContainer">
       <% products.forEach(product => { %>
-      <a href="/products/<%= product._id %>" class="card product-card m-1 me-sm-3 mb-sm-3" style="text-decoration: none; color: rgb(81, 81, 81)">
+      <a href="/products/<%= product._id %>" class="card product-card me-sm-3 mb-sm-3" style="text-decoration: none; color: rgb(81, 81, 81)">
         <img src="/img/products-img/<%= product.image %>" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title fw-bold" style="color: #80489c"><%= product.product_name %></h5>
