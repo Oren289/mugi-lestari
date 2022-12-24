@@ -41,10 +41,11 @@ app.use(cookieParser("secret"));
 app.use(
   session({
     name: "MyCoolWebAppCookieName",
-    cookie: { secure: true, httpOnly: false, maxAge: 60000 * 10, sameSite: "none" },
     secret: process.env.SECRET,
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
+    proxy: true,
+    cookie: { secure: true, httpOnly: false, maxAge: 60000 * 10, sameSite: "none" },
     store,
   })
 );
