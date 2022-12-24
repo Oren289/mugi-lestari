@@ -13,7 +13,7 @@ const http = require("http");
 const app = express();
 const port = process.env.PORT || 3001;
 const store = new MongoDBStore({
-  uri: DB_URI,
+  uri: process.env.DB_URI,
   collection: "sessions",
 });
 connectDB();
