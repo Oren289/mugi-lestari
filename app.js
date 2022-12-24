@@ -35,7 +35,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(cookieParser("secret"));
 app.use(
   session({
-    cookie: { maxAge: 60000 * 10 },
+    cookie: { secure: true, httpOnly: false, maxAge: 60000 * 10, sameSite: "none" },
     secret: "secret",
     resave: false,
     saveUninitialized: true,
