@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const orderSchema = new mongoose.Schema({
   id: String,
@@ -15,17 +15,14 @@ const orderSchema = new mongoose.Schema({
     type: Array,
     default: [],
   },
-  deliveryOption: String,
   timestamp: Date,
-  paymentMethod: String,
+  orderStatus: String,
   paymentStatus: String,
-  accountNumber: String,
-  accountName: String,
-  productReadyStatus: Boolean,
-  deliveredStatus: Boolean,
+  no_hp_umkm: String,
+  username_umkm: String,
   grandTotal: Number,
 });
 
-const Order = new mongoose.model("order", orderSchema);
+const Order = new mongoose.model('order', orderSchema);
 
 module.exports = Order;

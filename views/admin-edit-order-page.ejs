@@ -47,66 +47,41 @@
           </div>
           <div class="row g-3 align-items-center">
             <div class="col-md-2">
-              <label for="inputPassword6" class="col-form-label fw-bold">Delivery Option</label>
-            </div>
-            <div class="col">
-              <div><%= order.deliveryOption %></div>
-            </div>
-          </div>
-          <div class="row g-3 align-items-center">
-            <div class="col-md-2">
               <label for="inputPassword6" class="col-form-label fw-bold">Timestamp</label>
             </div>
             <div class="col">
               <div><%= order.timestamp %></div>
             </div>
           </div>
-          <div class="row g-3 align-items-center">
-            <div class="col-md-2">
-              <label for="inputPassword6" class="col-form-label fw-bold">Payment Method</label>
-            </div>
-            <div class="col">
-              <div><%= order.paymentMethod %></div>
-            </div>
-          </div>
-          <div class="row g-3 align-items-center">
-            <div class="col-md-2">
-              <label for="inputPassword6" class="col-form-label fw-bold">Payment Status</label>
-            </div>
-            <div class="col">
-              <div><%= order.paymentStatus %></div>
-            </div>
-          </div>
           <form action="/admin-edit?_method=PUT" method="POST">
-          <input type="hidden" value="<%= order.id %>" name="id">
-          <div class="row g-3 align-items-center">
-            <div class="col-md-2">
-              <label for="inputPassword6" class="col-form-label fw-bold">Product Ready Status</label>
+            <div class="row g-3 align-items-center">
+              <div class="col-md-2">
+                <label for="inputPassword6" class="col-form-label fw-bold">Order Status</label>
+              </div>
+              <div class="col">
+                <select name="orderStatus" id="orderStatus" class="form-control">
+                  <option value="Menunggu konfimasi penjual" <%- order.orderStatus === 'Menunggu konfirmasi penjual' ? 'selected' : null %>>Menunggu konfirmasi penjual</option>
+                  <option value="Barang sedang dikemas" <%- order.orderStatus === 'Barang sedang dikemas' ? 'selected' : null %>>Barang sedang dikemas</option>
+                  <option value="Barang sedang dikirim" <%- order.orderStatus === 'Barang sedang dikirim' ? 'selected' : null %>>Barang sedang dikirim</option>
+                  <option value="Selesai" <%- order.orderStatus === 'Selesai' ? 'selected' : null %>>Selesai</option>
+                </select>
+              </div>
             </div>
-            <div class="col">
-              <select class="form-select" aria-label="Default select example" name="productReadyStatus">
-                <option value="true" <% if(order.productReadyStatus === true){ %><%= "selected" %><% } %>>True</option>
-                <option value="false" <% if(order.productReadyStatus === false){ %><%= "selected" %><% } %>>False</option>
-              </select>
+            <div class="row g-3 align-items-center">
+              <div class="col-md-2">
+                <label for="inputPassword6" class="col-form-label fw-bold">Payment Status</label>
+              </div>
+              <div class="col">
+                <div><%= order.paymentStatus %></div>
+              </div>
             </div>
-          </div>
-          <div class="row g-3 align-items-center">
-            <div class="col-md-2">
-              <label for="inputPassword6" class="col-form-label fw-bold">deliveredStatus</label>
+            <input type="hidden" value="<%= order.id %>" name="id" />
+            <div class="row align-items-center mt-3">
+              <div class="col d-grid">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+              </div>
             </div>
-            <div class="col">
-              <select class="form-select" aria-label="Default select example" name="deliveredStatus">
-                <option value="true" <% if(order.deliveredStatus === true){ %><%= "selected" %><% } %>>True</option>
-                <option value="false" <% if(order.deliveredStatus === false){ %><%= "selected" %><% } %>>False</option>
-              </select>
-            </div>
-          </div>
-          <div class="row align-items-center mt-3">
-            <div class="col d-grid">
-              <button type="submit" class="btn btn-primary">Save Changes</button>
-            </div>
-          </div>
-        </form>
+          </form>
         </div>
       </div>
     </div>

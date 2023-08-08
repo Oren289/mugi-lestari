@@ -1,17 +1,17 @@
 <nav class="navbar navbar-expand-lg bg-light shadow">
   <div class="container">
-    <a class="navbar-brand" href="/"><span style="color: #ff8fb1">MI</span><span style="color: #432c7a">M</span><span style="color: #80489c">I</span></a>
+    <a class="navbar-brand" href="/"><img class="me-2" src="/img/logo_tegal.png" alt="" /><span>BumDes</span></a>
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link fw-bold <%= locals.activeHome?activeHome:null %>" aria-current="page" href="/">Home</a>
+          <a class="nav-link fw-bold <%= locals.activeHome?activeHome:null %>" aria-current="page" href="/">Beranda</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-bold <%= locals.activeProduct?activeProduct:null %>" href="/products">Products</a>
+          <a class="nav-link fw-bold <%= locals.activeProduct?activeProduct:null %>" href="/products">Produk</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-bold <%= locals.activeAbout?activeAbout:null %>" href="/about">About</a>
+          <a class="nav-link fw-bold <%= locals.activeAbout?activeAbout:null %>" href="/about">Tentang Kami</a>
         </li>
       </ul>
     </div>
@@ -53,7 +53,7 @@
     </div>
 
     <form class="d-flex search-bar" role="search">
-      <input class="form-control" id="searchBar" type="search" placeholder="Search" aria-label="Search" />
+      <input class="form-control" id="searchBar" type="search" placeholder="Cari..." aria-label="Search" />
       <button class="btn" type="submit" id="searchBarBtn">
         <i class="bi bi-search-heart"></i>
       </button>
@@ -63,12 +63,11 @@
       <button class="btn dropdown-toggle" type="button" id="dropdown-button" data-bs-toggle="dropdown" aria-expanded="false"><img class="user-picture" src="/img/blank-pp.png" alt="profilepic" /></button>
       <ul class="dropdown-menu">
         <li>
-          <span class="dropdown-item-text">Hello, <strong><%= locals.sessionUser?sessionUser.split(' ')[0]:"Guest"%></strong> &#128075;</span>
+          <span class="dropdown-item-text">Halo, <strong><%= locals.sessionUser?sessionUser.split(' ')[0]:"Guest"%></strong> &#128075;</span>
         </li>
         <li><hr class="dropdown-divider" /></li>
-        <li><a class="dropdown-item" href="/myaccount">My Account</a></li>
-        <li><a class="dropdown-item" href="/orders">Order List</a></li>
-        <li><a class="dropdown-item" href="#">Wishlist</a></li>
+        <li><a class="dropdown-item" href="/myaccount">Akun Saya</a></li>
+        <li><a class="dropdown-item" href="/orders">List Pemesanan</a></li>
         <% if(sessionUser){ %>
         <li><a class="btn btn-danger d-grid mx-2 mt-3 badge" href="/logout">Log out</a></li>
         <% } else { %>

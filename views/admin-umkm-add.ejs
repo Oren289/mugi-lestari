@@ -1,0 +1,44 @@
+<div class="mt-5">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="fw-bold mb-4"><%= title %></h3>
+          <form action="/admin-umkm-list/add" method="POST">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Nama UMKM</label>
+              <input type="text" class="form-control" id="umkm_name" name="umkm_name" aria-describedby="umkmNameHelp" required autocomplete="off" />
+              <div id="emailHelp" class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Nama Pemilik (Owner)</label>
+              <input type="text" class="form-control" id="owner" name="owner" required autocomplete="off" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Bidang UMKM</label>
+              <input type="text" class="form-control" id="bidang" name="bidang" required autocomplete="off" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">No. Handphone</label>
+              <input type="text" class="form-control" id="no_hp" name="no_hp" required autocomplete="off" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Alamat</label>
+              <textarea name="alamat" id="alamat" cols="30" rows="5" class="form-control"></textarea>
+            </div>
+            <hr />
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" name="username" required autocomplete="off" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" name="password" required autocomplete="off" />
+            </div>
+            <button type="submit" class="btn btn-primary mt-5">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

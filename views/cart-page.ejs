@@ -1,18 +1,25 @@
 <div class="container mt-5">
   <div class="row">
     <h3 class="fw-bold">My Cart</h3>
+    <% if (error !== '') { %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <%= error %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <% } %>
     <div class="col">
       <% (carts.products).forEach(item => { %>
       <div class="card mb-3">
         <div class="row g-0">
           <div class="col-md-3">
-            <a href="/products/<%= item.id %>"><img src="/img/products-img/<%= item.image %>" class="rounded-start cart-img" alt="..." /></a>
+            <a href="/products/<%= item.id %>"><img src="/img/default-product-image.png" class="rounded-start cart-img" alt="..." /></a>
           </div>
           <div class="col">
             <div class="card-body">
               <div class="row">
                 <div class="col">
                   <h5 class="card-title"><%= item.name %></h5>
+                  <h6 class="card-title fw-bold"><%= item.umkm %></h6>
                   <h4 class="card-text fw-bold">Total: Rp <%= (item.price*item.quantity).toLocaleString() %></h4>
                 </div>
                 <div class="col-md-1 d-flex align-items-center">
@@ -49,9 +56,38 @@
             </div>
           </div>
           <div class="d-grid mt-2">
-            <a href="/payment" class="btn btn-primary mt-1">Go to Payment</a>
+            <!-- <a href="/payment" class="btn btn-primary mt-1"><i class="bi bi-whatsapp me-2"></i>Check out</a> -->
+            <button type="button" class="btn btn-primary mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-whatsapp me-2"></i>Check Out</button>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">Check Out</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-2">Anda akan melakukan check out untuk barang berikut:</div>
+        <% (carts.products).forEach(cart => { %>
+        <div><i class="bi bi-check-circle-fill text-success"></i> <%= cart.name %> <i class="bi bi-arrow-right"></i> <span class="fw-bold">Rp <%= cart.price.toLocaleString() %> x<%= cart.quantity %> </span></div>
+        <% }) %> <% if (carts.products.length === 0) { %>
+        <div class="alert alert-warning mt-3"><i class="bi bi-info-circle-fill"></i> Anda belum menambahkan produk ke keranjang!</div>
+        <% } %> <% if (carts.products.length !== 0) { %>
+        <div class="alert alert-info mt-3"><i class="bi bi-info-circle-fill"></i> Jika sudah yakin, silahkan lakukan check out dan lanjutkan ke WhatsApp dengan penjual untuk mengatur pengiriman produk.</div>
+        <% } %>
+      </div>
+      <div class="modal-footer">
+        <form action="/payment" method="POST">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-primary">Check Out dan Lanjutkan ke WhatsApp</button>
+        </form>
       </div>
     </div>
   </div>

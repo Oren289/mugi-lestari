@@ -47,42 +47,10 @@
           </div>
           <div class="row g-3 align-items-center">
             <div class="col-md-2">
-              <label for="inputPassword6" class="col-form-label fw-bold">Delivery Option</label>
-            </div>
-            <div class="col">
-              <div><%= order.deliveryOption %></div>
-            </div>
-          </div>
-          <div class="row g-3 align-items-center">
-            <div class="col-md-2">
               <label for="inputPassword6" class="col-form-label fw-bold">Timestamp</label>
             </div>
             <div class="col">
               <div><%= order.timestamp %></div>
-            </div>
-          </div>
-          <div class="row g-3 align-items-center">
-            <div class="col-md-2">
-              <label for="inputPassword6" class="col-form-label fw-bold">Payment Method</label>
-            </div>
-            <div class="col">
-              <div><%= order.paymentMethod %></div>
-            </div>
-          </div>
-          <div class="row g-3 align-items-center">
-            <div class="col-md-2">
-              <label for="inputPassword6" class="col-form-label fw-bold">Account Number</label>
-            </div>
-            <div class="col">
-              <div><%= order.accountNumber?order.accountNumber:"" %></div>
-            </div>
-          </div>
-          <div class="row g-3 align-items-center">
-            <div class="col-md-2">
-              <label for="inputPassword6" class="col-form-label fw-bold">Account Name</label>
-            </div>
-            <div class="col">
-              <div><%= order.accountName?order.accountName:"" %></div>
             </div>
           </div>
           <div class="row g-3 align-items-center">
@@ -95,26 +63,18 @@
           </div>
           <div class="row g-3 align-items-center">
             <div class="col-md-2">
+              <label for="inputPassword6" class="col-form-label fw-bold">Order Status</label>
+            </div>
+            <div class="col">
+              <div><%= order.orderStatus %></div>
+            </div>
+          </div>
+          <div class="row g-3 align-items-center">
+            <div class="col-md-2">
               <label for="inputPassword6" class="col-form-label fw-bold">Payment Status</label>
             </div>
             <div class="col">
               <div><%= order.paymentStatus %></div>
-            </div>
-          </div>
-          <div class="row g-3 align-items-center">
-            <div class="col-md-2">
-              <label for="inputPassword6" class="col-form-label fw-bold">Product Ready Status</label>
-            </div>
-            <div class="col">
-              <div><%= order.productReadyStatus %></div>
-            </div>
-          </div>
-          <div class="row g-3 align-items-center">
-            <div class="col-md-2">
-              <label for="inputPassword6" class="col-form-label fw-bold">deliveredStatus</label>
-            </div>
-            <div class="col">
-              <div><%= order.deliveredStatus %></div>
             </div>
           </div>
           <div class="row align-items-center mt-3">
@@ -142,7 +102,7 @@
       <div class="modal-body">Are you sure to confirm this user's payment?</div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a href="/admin-home/change-payment-status/<%= order.id %>" class="btn btn-primary">Confirm Payment</a>
+        <a href="/admin-order-list/change-payment-status/<%= order.id %>" class="btn btn-primary">Confirm Payment</a>
       </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Oswald:wght@300;400;500;700&family=Titillium+Web:wght@300;400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Oswald:wght@300;400;500;700&family=Titillium+Web:wght@300;400;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -7,7 +7,7 @@
 body {
   margin: 0;
   background-color: rgb(242, 242, 242);
-  font-family: "Titillium Web", sans-serif;
+  font-family: 'Titillium Web', sans-serif;
   color: rgb(81, 81, 81);
   display: flex;
   flex-direction: column;
@@ -20,12 +20,12 @@ body {
 
 footer {
   margin-top: 8rem;
-  background-color: #432c7a;
+  background-color: #344cb7;
   color: whitesmoke;
 }
 
 .footer-logo {
-  font-family: "Alfa Slab One", cursive;
+  font-family: 'Alfa Slab One', cursive;
   font-size: 2em;
   text-decoration: none;
   color: #ff8fb1;
@@ -46,7 +46,7 @@ footer {
 }
 
 .jumbotron h2 {
-  font-family: "Alfa Slab One", cursive;
+  font-family: 'Alfa Slab One', cursive;
   color: #de4875;
   font-size: 4em;
 }
@@ -68,8 +68,8 @@ footer {
 }
 
 .jumbotron-home h2 {
-  font-family: "Alfa Slab One", cursive;
-  color: #de4875;
+  font-family: 'Alfa Slab One', cursive;
+  color: whitesmoke;
   font-size: 4em;
 }
 
@@ -88,7 +88,7 @@ footer {
 }
 
 .jumbotron-home-2 h2 {
-  font-family: "Alfa Slab One", cursive;
+  font-family: 'Alfa Slab One', cursive;
   color: #80489c;
   font-size: 4em;
 }
@@ -168,7 +168,7 @@ footer {
 }
 
 .nav-link {
-  color: #ff8fb1;
+  color: #068fff;
   margin-right: 2em;
 }
 
@@ -177,17 +177,25 @@ footer {
 }
 
 .nav-link:hover {
-  color: #de4875;
+  color: #344cb7;
 }
 
 .nav-link:focus {
-  color: #de4875;
+  color: #000957;
   outline: none;
 }
 
 .navbar-brand {
-  font-family: "Alfa Slab One", cursive;
+  font-family: 'Alfa Slab One', cursive;
   font-size: 2em;
+}
+
+.navbar-brand img {
+  max-height: 3rem;
+}
+
+.navbar-brand span {
+  color: #344cb7;
 }
 
 .navbar-nav:first-child {
@@ -207,7 +215,7 @@ footer {
 }
 
 .active {
-  color: #de4875;
+  color: #344cb7;
   text-decoration: underline;
 }
 
@@ -239,33 +247,33 @@ footer {
 .search-bar > input:focus,
 .search-bar > input:active {
   border-radius: 10px 0 0 10px;
-  border-color: #80489c;
+  border-color: #068fff;
   box-shadow: none;
 }
 
 .search-bar > button {
-  border-color: #80489c;
-  background-color: #80489c;
+  border-color: #068fff;
+  background-color: #068fff;
   color: whitesmoke;
   border-radius: 0 10px 10px 0;
   font-size: 1.1em;
 }
 
 .search-bar > button:hover {
-  border-color: #ff8fb1;
-  background-color: #ff8fb1;
-  color: #80489c;
+  border-color: #344cb7;
+  background-color: #344cb7;
+  color: whitesmoke;
   border-radius: 0 10px 10px 0;
 }
 
 .cart-button {
   font-size: 1.5em;
-  color: #ff8fb1;
+  color: #068fff;
   transition: color ease-in 0.2s;
 }
 
 .cart-button:hover {
-  color: #80489c;
+  color: #344cb7;
 }
 
 .product-card {

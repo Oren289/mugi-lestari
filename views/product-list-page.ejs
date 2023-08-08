@@ -2,8 +2,8 @@
   <div class="row jumbo">
     <div class="col">
       <div id="productJumbotron" class="card jumbotron p-4 p-sm-5" style="background-image: linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.68)), url('/img/assortment-pieces-cake.jpg')">
-        <h2><span style="color: #80489c">Discover</span> your taste.</h2>
-        <h5 class="lead">Our products are made with the best quality ingredients and lots of love!</h5>
+        <h2 style="color: whitesmoke;"><span style="color: #068fff">Temukan</span> semua di sini!</h2>
+        <h5 class="lead">Our products are made with the best quality and lots of love!</h5>
       </div>
     </div>
   </div>
@@ -15,10 +15,13 @@
         </div>
         <div class="card-body">
           <div class="btn btn-category d-grid text-start fw-bold category-basah" id="category-basah">
-            <div><i class="fa-solid fa-cake-candles me-2"></i>Kue Basah</div>
+            <div><i class="bi bi-hammer me-2"></i>Kerajinan</div>
           </div>
           <div class="btn btn-category d-grid text-start fw-bold mt-2 category-kering" id="category-kering">
-            <div><i class="fa-solid fa-cookie-bite me-2"></i>Kue Kering</div>
+            <div><i class="fa-solid fa-cookie-bite me-2"></i>Makanan</div>
+          </div>
+          <div class="btn btn-category d-grid text-start fw-bold mt-2 category-kering" id="category-kering">
+            <div><i class="bi bi-cup-straw me-2"></i>Minuman</div>
           </div>
         </div>
       </div>
@@ -26,11 +29,11 @@
     <div class="col d-flex flex-wrap" id="productListContainer">
       <% products.forEach(product => { %>
       <a href="/products/<%= product._id %>" class="card product-card me-sm-3 mb-sm-3" style="text-decoration: none; color: rgb(81, 81, 81)">
-        <img src="/img/products-img/<%= product.image %>" class="card-img-top" alt="..." />
+        <img src="/img/default-product-image.png" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title fw-bold" style="color: #80489c"><%= product.product_name %></h5>
           <h5 class="card-subtitle fw-bold">Rp <%= product.price.toLocaleString() %></h5>
-          <p class="card-text excerpt mt-2"><%= product.short_description %></p>
+          <p class="card-text excerpt mt-2"><%= (product.description).substring(0, 60) + "..." %></p>
           <div class="">
             <div class="btn btn-category badge"><i class="fa-solid <% if (product.category === "kue basah"){ %>
               fa-cake-candles

@@ -1,0 +1,41 @@
+<div class="mt-5">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="fw-bold mb-4"><%= title %></h3>
+          <a class="btn btn-primary mb-4" href="/admin-umkm-list/add"><i class="bi bi-plus-circle me-2"></i>Tambah Data UMKM</a>
+          <div class="table-container">
+            <table id="example" class="table table-striped" style="width: 100%">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nama UMKM</th>
+                  <th scope="col">Pemilik</th>
+                  <th scope="col">Bidang</th>
+                  <th scope="col">No. HP</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% let num = 0 %> <% umkms.forEach(umkm => { %>
+                <tr>
+                  <th scope="row"><%= ++num %></th>
+                  <td><%= umkm.umkm_name %></td>
+                  <td><%= umkm.owner %></td>
+                  <td><%= umkm.bidang %></td>
+                  <td><%= umkm.no_hp %></td>
+                  <td>
+                    <a href="/admin-umkm-list/<%= umkm._id %>" class="btn btn-info">Detail</a>
+                    <a href="/admin-umkm-list/delete/<%= umkm._id %>" class="btn btn-danger">Delete</a>
+                  </td>
+                </tr>
+                <% }) %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

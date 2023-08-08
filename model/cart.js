@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const cartSchema = new mongoose.Schema({
   username: {
@@ -9,6 +9,7 @@ const cartSchema = new mongoose.Schema({
     {
       id: String,
       name: String,
+      umkm: String,
       price: Number,
       image: String,
       quantity: Number,
@@ -17,8 +18,11 @@ const cartSchema = new mongoose.Schema({
   grandTotal: {
     type: Number,
   },
+  current_umkm: {
+    type: String,
+  },
 });
 
-const Cart = new mongoose.model("cart", cartSchema);
+const Cart = new mongoose.model('cart', cartSchema);
 
 module.exports = Cart;

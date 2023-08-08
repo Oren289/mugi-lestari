@@ -1,41 +1,9 @@
-<div class="container mt-5">
+<div class="mt-5">
   <div class="row">
     <div class="col">
       <div class="card">
         <div class="card-body">
-          <h3 class="fw-bold">Order Data</h3>
-          <table class="table table-stripped mt-3 text-center">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Order Id</th>
-                <th scope="col">Username</th>
-                <th scope="col">Timestamp</th>
-                <th scope="col">Total Payment</th>
-                <th scope="col">Payment Status</th>
-                <th scope="col">Product Ready Status</th>
-                <th scope="col">Delivered Status</th>
-                <th scope="col">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% let num = 0 %> <% orders.forEach(order => { %>
-              <tr>
-                <th scope="row"><%= ++num %></th>
-                <td><%= (order.id).substring(0, 9) + "..." %></td>
-                <td><%= order.username %></td>
-                <td><%= (order.timestamp.toString()).substring(0, 21) %></td>
-                <td>Rp <%= order.grandTotal.toLocaleString() %></td>
-                <td><%= order.paymentStatus %></td>
-                <td><%= order.productReadyStatus %></td>
-                <td><%= order.deliveredStatus %></td>
-                <td>
-                  <a href="/admin-home/<%= order.id %>" class="btn btn-info">Detail</a>
-                </td>
-              </tr>
-              <% }) %>
-            </tbody>
-          </table>
+          <h3 class="fw-bold">Halo, Admin</h3>
         </div>
       </div>
     </div>

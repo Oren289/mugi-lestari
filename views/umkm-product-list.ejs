@@ -1,0 +1,41 @@
+<div class="mt-5">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="fw-bold mb-4"><%= title %></h3>
+          <a class="btn btn-primary mb-4" href="/umkm-product-list/add"><i class="bi bi-plus-circle me-2"></i>Tambah Data Produk</a>
+          <div class="table-container">
+            <table id="example" class="table table-striped" style="width: 100%">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nama produk</th>
+                  <th scope="col">Harga</th>
+                  <th scope="col">UMKM</th>
+                  <th scope="col">Kategori</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% let num = 0 %> <% products.forEach(product => { %>
+                <tr>
+                  <th scope="row"><%= ++num %></th>
+                  <td><%= product.product_name %></td>
+                  <td>Rp <%= product.price.toLocaleString() %></td>
+                  <td><%= product.umkm %></td>
+                  <td><%= product.category %></td>
+                  <td>
+                    <a href="/umkm-product-list/<%= product._id %>" class="btn btn-info">Detail</a>
+                    <a href="/umkm-product-list/delete/<%= product._id %>" class="btn btn-danger">Delete</a>
+                  </td>
+                </tr>
+                <% }) %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

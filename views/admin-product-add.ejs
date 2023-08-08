@@ -1,0 +1,56 @@
+<div class="mt-5">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="fw-bold mb-4"><%= title %></h3>
+          <form action="/admin-product-list/add" method="POST">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Nama produk</label>
+              <input type="text" class="form-control" id="product_name" name="product_name" aria-describedby="productNameHelp" required />
+              <div id="emailHelp" class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Harga produk</label>
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Rp</span>
+                <input type="number" class="form-control" id="price" name="price" min="0" required />
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">UMKM</label>
+              <select class="form-control" name="umkm" id="umkm" required>
+                <option value="" selected disabled>Pilih UMKM</option>
+                <% umkms.forEach(umkm => { %>
+                <option value="<%= umkm.umkm_name %>"><%= umkm.umkm_name %></option>
+                <% }) %>
+              </select>
+              <div id="emailHelp" class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Kategori</label>
+              <select class="form-control" name="category" id="category" required>
+                <option value="kerajinan">Kerajinan</option>
+                <option value="makanan">Makanan</option>
+                <option value="minuman">Minuman</option>
+                <option value="obat">Obat-obatan</option>
+              </select>
+              <div id="emailHelp" class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Gambar</label>
+              <input type="file" class="form-control" id="image" name="image" accept="image/png, image/jpeg" />
+              <div id="emailHelp" class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Deskripsi produk</label>
+              <textarea name="description" id="description" cols="30" rows="5" class="form-control"></textarea>
+              <div id="emailHelp" class="form-text"></div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
