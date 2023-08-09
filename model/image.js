@@ -1,17 +1,17 @@
-const { ContextRunnerImpl } = require('express-validator/src/chain');
 const mongoose = require('mongoose');
-
-const multer = require('multer');
 
 const imageSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
   },
-  image: {
-    type: Buffer,
-    contentType: String,
+  product_id: {
+    type: String,
     required: true,
+  },
+  image: {
+    data: Buffer,
+    contentType: String,
   },
 });
 

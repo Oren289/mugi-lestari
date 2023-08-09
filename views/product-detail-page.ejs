@@ -7,7 +7,7 @@
   </nav>
   <div class="row">
     <div class="col-md-4">
-      <img src="/img/default-product-image.png" alt="" class="detail-img" />
+      <img src="/uploads/<%= product.image_name %>" alt="" class="detail-img" />
     </div>
     <div class="col">
       <h2 class="fw-bold mt-4 mt-sm-0"><%= product.product_name %></h2>
@@ -51,6 +51,7 @@
             <input type="hidden" name="name" value="<%= product.product_name %>" />
             <input type="hidden" name="price" value="<%= product.price %>" />
             <input type="hidden" name="umkm" value="<%= product.umkm %>" />
+            <input type="hidden" name="image" value="<%= product.image_name %>" />
             <div class="row d-flex align-items-center">
               <div class="col-md-4">
                 <label for="quantity" class="form-label">Quantity</label>
@@ -75,7 +76,7 @@
     <div class="col d-flex flex-wrap" id="productListContainer">
       <% recommendation.slice(0, 5).forEach(product => { %>
       <a href="/products/<%= product._id %>" class="card product-card me-sm-3 mb-sm-3" style="text-decoration: none; color: rgb(81, 81, 81)">
-        <img src="/img/default-product-image.png" class="card-img-top" alt="..." />
+        <img src="/uploads/<%= product.image_name %>" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title fw-bold" style="color: #80489c"><%= product.product_name %></h5>
           <h5 class="card-subtitle fw-bold">Rp <%= product.price.toLocaleString() %></h5>

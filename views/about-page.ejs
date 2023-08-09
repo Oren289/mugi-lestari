@@ -5,14 +5,30 @@
         <div class="card-body">
           <h3 class="fw-bold" style="color: #80489c">About Us</h3>
           <hr />
-          <p style="font-size: 1.1em">
-            Mimi Cake and Cookies is a micro home business which focuses on the culinary field, especially cakes. Base The production of this business is in a private house located in Jambi City, Jambi Province. Mimi Cake and Cookies
-            produces various kinds of cakes, both dry and wet. Lots cake options that customers can choose from such as lapis legit, masuba, ant nest cake, etc. The ingredients used are ensured of the best quality and health. Production is
-            also done with detailed attention to the cleanliness of tools and materials as well as the place.
-          </p>
+          <h4 class="fw-bold">Tentang Bumdes</h4>
+          <p style="font-size: 1.1em">Badan Usaha Milik Desa Mugi Lestari Kabunan adalah Bumdes yang dimiliki oleh Desa Kabunan, Kecamatan Dukuhwaru, Kabupaten Tegal.</p>
+          <hr />
+          <h4 class="fw-bold">Visi</h4>
+          <p style="font-size: 1.1em">Visi BUMDes "MUGI LESTARI" adalah Mewujudkan Tata Kelola Potensi Desa Kabunan menuju masyarakat yang Berkah, Sejahtera, dan Mandiri.</p>
+          <hr />
+          <h4 class="fw-bold">Misi</h4>
+          <p style="font-size: 1.1em">Misi BUMDes "MUGI LESTARI" adalah sebagai berikut:</p>
+          <div>Menggali potensi Desa untuk didayagunakan;</div>
+          <div>Membuka wirausaha masyarakat;</div>
+          <div>Memberikan pelayanan yang tepat guna;</div>
+          <div>Mengembangkan jaringan kerjasama ekonomi dengan berbagai pihak;</div>
+          <div>Menciptakan lapangan pekerjaan;</div>
+          <hr />
+          <h4 class="fw-bold">Jenis Usaha</h4>
+          <p style="font-size: 1.1em">Jenis usaha BUMDes "MUGI LESTARI" meliputi usaha-usaha:</p>
+          <div>Bisnis perdagangan</div>
+          <div>Bisnis penyewaan</div>
+          <div>Bisnis sosial</div>
+          <div>Bisnis perantara</div>
+          <div>Bisnis keuangan</div>
           <hr />
           <div style="font-size: 8em">
-            <i class="fa-solid fa-cake-candles" style="color: #ff8fb1"></i>
+            <i class="bi bi-box2-heart" style="color: #ff8fb1"></i>
           </div>
           <div class="fw-bold fs-4">
             <blockquote>"Karena kami percaya kualitas produksi berbanding lurus dengan cita-rasa kue. Tidak hanya cita-rasa, estetika dari produk kami juga merupakan prioritas yang diutamakan."</blockquote>
@@ -21,9 +37,9 @@
         <hr />
         <div>
           <h3 class="fw-bold" style="color: #80489c">Contact Us</h3>
-          <h5 class="mt-3"><i class="bi bi-whatsapp"></i> +6285219850202</h5>
-          <h5 class="mt-2"><i class="bi bi-envelope-fill"></i> ilhanmahardikap@gmail.com</h5>
-          <h5 class="mt-2 mb-4"><i class="bi bi-geo-alt-fill"></i> Jl. Pattimura, Perum. Rukun Sentosa Indah III, Blok.A, No.4, Kel. Kenali Besar, Kec. Kotabaru, Kota Jambi</h5>
+          <h5 class="mt-3"><i class="bi bi-whatsapp"></i> +6285747390052</h5>
+          <h5 class="mt-2"><i class="bi bi-envelope-fill"></i> bumdeskabunanmugilestari@gmail.com</h5>
+          <h5 class="mt-2 mb-4"><i class="bi bi-geo-alt-fill"></i> Jl. Wijaya Kusuma, RT. 004, RW. 003, Desa Kabunan, Kec. Dukuhwaru, Kab. Tegal</h5>
           <div id="mapid"></div>
         </div>
       </div>
@@ -31,15 +47,15 @@
   </div>
 </div>
 <script type="text/javascript">
-  var map = L.map("mapid").setView([-1.617898, 103.549382], 13);
-  L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+  var map = L.map('mapid').setView([-6.981335591558538, 109.11896913608766], 13);
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 20,
-    id: "mapbox/streets-v11",
+    id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
-    accessToken: "pk.eyJ1IjoicGluZ2dhbmd0YXJ1bmEiLCJhIjoiY2t4OWx1ZDM4MHgwczJwcnlkNmZlam03OSJ9.NV0wyOSuc2obO7enh_sisg",
+    accessToken: 'pk.eyJ1IjoicGluZ2dhbmd0YXJ1bmEiLCJhIjoiY2t4OWx1ZDM4MHgwczJwcnlkNmZlam03OSJ9.NV0wyOSuc2obO7enh_sisg',
   }).addTo(map);
 
-  var marker = L.marker([-1.617898, 103.549382]).addTo(map).bindPopup('<b>SMPN 1 Kota Jambi</b><br><center><img src="gambar/smpn1.jpg" />');
+  var marker = L.marker([-6.981335591558538, 109.11896913608766]).addTo(map).bindPopup('<b>SMPN 1 Kota Jambi</b><br><center><img src="gambar/smpn1.jpg" />');
 </script>

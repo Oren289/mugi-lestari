@@ -66,7 +66,7 @@ router.post('/', async (req, res) => {
               name: req.body.name,
               price: req.body.price,
               umkm: req.body.umkm,
-              image: req.body.image,
+              image_name: req.body.image,
               quantity: req.body.quantity,
             },
           },

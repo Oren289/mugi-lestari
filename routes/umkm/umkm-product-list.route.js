@@ -1,9 +1,23 @@
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
+const fs = require('fs');
+const path = require('path');
+const { v4: uuidv4 } = require('uuid');
 
 require('../../utils/db');
 const Product = require('../../model/product');
 const Umkm = require('../../model/umkm');
+const imgSchema = require('../../model/image');
+
+const storage = multer.diskStorage({
+  destination: './public/uploads',
+  filename: (req, file, cb) => {
+    cb(null, file.fieldname + '-' + Date.now() + '.jpg');
+  },
+});
+
+const upload = multer({ storage: storage });
 
 router.get('/', async (req, res) => {
   const umkm = await Umkm.findOne({ username: req.session.umkm });
@@ -46,14 +60,29 @@ router.get('/add', async (req, res) => {
   }
 });
 
-router.post('/add', async (req, res) => {
+router.post('/add', upload.single('image'), async (req, res) => {
   const umkm = await Umkm.findOne({ username: req.session.umkm });
   if (!req.session.umkm) {
     res.redirect('/umkm-login');
   } else {
     try {
+      const newId = uuidv4();
+
+      const obj = {
+        name: req.file.filename,
+        product_id: newId,
+        img: {
+          data: fs.readFileSync(path.join(__dirname, '..', '..', 'public', 'uploads', req.file.filename)),
+          contentType: 'image/png',
+        },
+      };
+
+      imgSchema.create(obj);
+
       const query = {
+        id: newId,
         product_name: req.body.product_name,
+        image_name: req.file.filename,
         description: req.body.description,
         price: req.body.price,
         umkm: umkm.umkm_name,
