@@ -22,6 +22,7 @@ router.post('/', async (req, res) => {
   const errors = validationResult(req);
   try {
     const admin = await Admin.findOne({ username: req.body.username.trim() });
+    console.log(admin);
     if (admin) {
       const match = await bcrypt.compare(req.body.password.trim(), admin.password);
       if (match) {
